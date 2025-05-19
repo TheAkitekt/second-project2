@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Greeting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaf7fc;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #007b5e;
+            margin-top: 40px;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            text-align: center;
+            margin: 20px;
+            color: #555;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+        .image-grid img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .image-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="'Hello, ' + ${name} + '!'">Hello</h1>
+<h2>Tesla</h2>
+<p th:text="'Tesla, Inc. is an American electric vehicle and clean energy company. Founded in 2003, Tesla is dedicated to accelerating the world\'s transition to sustainable energy through innovative products like electric cars, solar panels, and energy storage solutions.'">
+    Tesla is a leading electric vehicle manufacturer.
+</p>
+
+<div class="image-grid">
+    <img th:src="@{/images/e.jpg}" alt="Digne" />
+    <img th:src="@{/images/u.jpeg}" alt="Digne" />
+    <img th:src="@{/images/t.jpeg}" alt="Digne" />
+    <img th:src="@{/images/p.jpeg}" alt="Digne" />
+</div>
+</body>
+</html>
